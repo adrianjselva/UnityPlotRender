@@ -1,7 +1,3 @@
-//
-// Created by adrianselva on 5/23/22.
-//
-
 #ifndef UNITYPLOTRENDER_PLOT_H
 #define UNITYPLOTRENDER_PLOT_H
 
@@ -10,9 +6,11 @@
 #include "dataset/NormalizedDataset.h"
 
 class Plot {
+    explicit Plot(float* x, int x_length, float* y, int y_length);
+
+    void render();
 private:
     std::unique_ptr<NormalizedDataset> dataset_;
-    long id_;
 };
 
 

@@ -1,7 +1,3 @@
-//
-// Created by adrianselva on 5/19/22.
-//
-
 #include "dataset/Summary.h"
 
 Summary::Summary() {

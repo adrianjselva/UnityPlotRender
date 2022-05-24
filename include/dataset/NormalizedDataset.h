@@ -3,19 +3,21 @@
 
 #include "Dataset.h"
 
-class NormalizedDataset : Dataset {
+class NormalizedDataset {
 public:
     explicit NormalizedDataset(float* x, int x_length, float* y, int y_length,
                                float x_normalized_range, float y_normalized_range, float x_offset, float y_offset);
     explicit NormalizedDataset(float x_normalized_range, float y_normalized_range, float x_offset, float y_offset);
+    explicit NormalizedDataset(float* x, int x_length, float* y, int y_length);
 
-    void Add(float x, float y) override;
+    void Add(float x, float y);
 private:
     float x_normalized_range_;
     float y_normalized_range_;
     float x_offset_;
     float y_offset_;
 
+    std::unique_ptr<Dataset> raw_dataset_;
     std::unique_ptr<Dataset> normalized_dataset_;
 
     void Normalize();

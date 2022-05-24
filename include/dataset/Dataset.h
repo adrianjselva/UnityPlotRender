@@ -2,6 +2,7 @@
 #define UNITYPLOTRENDER_DATASET_H
 
 #include <memory>
+#include <string>
 #include <vector>
 
 #include "dataset/Summary.h"
@@ -16,7 +17,7 @@ public:
     [[nodiscard]] std::vector<float>& y();
 
     virtual void Add(float x, float y);
-protected:
+private:
     std::unique_ptr<Summary> summary_;
     std::vector<float> x_;
     std::vector<float> y_;
